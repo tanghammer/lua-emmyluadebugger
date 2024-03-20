@@ -18,7 +18,7 @@ A OpenWrt package of EmmyLuaDebugger
   - clion添加一个配置：Run >> Edit Configuration >> + ,选择Emmy Debugger，然后配置参数，IDE这端作为Server所以connection选择Debugger connect IDE，配好本机ip和监听端口。
   - 拷贝clion上自动生成的lua代码到lua的入口文件/www/cgi-bin/luci的第一行
   ```lua
-  -- openwrt上这句可以不要
+  -- openwrt上这句可以不要,emmy_core.so被安装到了/usr/lib/lua,此路径已在package.cpath中
   -- package.cpath = package.cpath .. ';/home/a/.local/share/JetBrains/CLion2023.3/EmmyLua/debugger/emmy/linux/?.so'
   local dbg = require('emmy_core')
   dbg.tcpConnect('192.168.3.3', 9966)
